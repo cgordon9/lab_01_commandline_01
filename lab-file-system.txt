@@ -7,7 +7,7 @@ Follow the instructions line-by-line.
 * Enter, tab, up and down are represented by <ENTER><TAB>,<UP> and <DOWN>.  
 * "No output" or "nothing happens" are valid answers to any of the questions.
 ==========
-
+showed folder cheese, then deletes 
 ==========
 1. Open a new terminal window.
 ----------
@@ -31,7 +31,8 @@ If it doesn't start at #1 again, or ask for help before moving on!
 
 Copy and paste the output of pwd below.
 ----------
-
+v314-ent-004:mtec1002 student$ pwd
+/Users/student/mtec1002
 
 
 ==========
@@ -43,6 +44,18 @@ $ ls
 Copy and paste the output below.
 ----------
 
+v314-ent-004:~ student$ ls 
+Adlm				Things
+Applications			animals
+Desktop				c
+Documents			ipe.properties
+Downloads			isus
+Library				lab_01_commandline_01
+Movies				mtec1002
+Music				pslog_20200109_170408.log
+Pictures			pymel.log
+Public				xgen
+QLData
 
 
 ==========
@@ -54,6 +67,19 @@ $ ls
 Copy and paste the output below.
 ----------
 
+v314-ent-004:~ student$ mkdir food
+v314-ent-004:~ student$ ls
+Adlm				Things
+Applications			animals
+Desktop				c
+Documents			food
+Downloads			ipe.properties
+Library				isus
+Movies				lab_01_commandline_01
+Music				mtec1002
+Pictures			pslog_20200109_170408.log
+Public				pymel.log
+QLData				xgen
 
 
 ==========
@@ -65,6 +91,20 @@ $ ls
 Copy and paste the output below.
 ----------
 
+v314-ent-004:~ student$ mkdir -p foo/bar/baz/qux
+v314-ent-004:~ student$ ls
+Adlm				animals
+Applications			c
+Desktop				foo
+Documents			food
+Downloads			ipe.properties
+Library				isus
+Movies				lab_01_commandline_01
+Music				mtec1002
+Pictures			pslog_20200109_170408.log
+Public				pymel.log
+QLData				xgen
+Things
 
 
 ==========
@@ -76,6 +116,9 @@ $ pwd
 Copy and paste the output below.
 ----------
 
+v314-ent-004:~ student$ cd foo/bar/baz/qux
+v314-ent-004:qux student$ pwd
+/Users/student/foo/bar/baz/qux
 
 
 ==========
@@ -86,6 +129,8 @@ $ pwd
 
 Copy and paste the output below.
 ----------
+v314-ent-004:bar student$ pwd
+/Users/student/foo/bar
 
 
 
@@ -98,7 +143,10 @@ $ pwd
 Copy and paste the output below.
 ----------
 
-
+v314-ent-004:bar student$ cd -
+/Users/student/foo/bar/baz/qux
+v314-ent-004:qux student$ pwd
+/Users/student/foo/bar/baz/qux
  
 ==========
 11. Type:
@@ -108,6 +156,9 @@ $ pwd
 
 Copy and paste the output below.
 ----------
+v314-ent-004:qux student$ cd ../../../..
+v314-ent-004:~ student$ pwd
+/Users/student
 
 
 
@@ -121,7 +172,10 @@ $ ls -l
 Copy and paste the first two lines from the output into the space below.
 ----------
 
-
+v314-ent-004:~ student$ ls -l
+total 32
+drwxr-x---   2 student  staff    68 Aug 22  2016 Adlm
+drwxr-xr-x   4 student  staff   136 Aug 22  2016 Applications
 
 ==========
 13. Type:
@@ -131,6 +185,9 @@ $ pwd
 
 Copy and paste the output into the space below.
 ----------
+v314-ent-004:~ student$ cd ~
+v314-ent-004:~ student$ pwd
+/Users/student
 
 
 
@@ -142,6 +199,9 @@ $ pwd
 
 Copy and paste the output into the space below.
 ----------
+v314-ent-004:~ student$ cd /Volumes
+v314-ent-004:Volumes student$ pwd
+/Volumes
 
 
 
@@ -154,6 +214,10 @@ $ pwd
 Copy and paste the output into the space below.
 ----------
 
+v314-ent-004:Volumes student$ cd /unknown_folder
+-bash: cd: /unknown_folder: No such file or directory
+v314-ent-004:Volumes student$ pwd
+/Volumes
 
 
 ==========
@@ -165,6 +229,9 @@ $ pwd
 Copy and paste the output into the space below.
 ----------
 
+v314-ent-004:Volumes student$ cd ~/mtec1002
+v314-ent-004:mtec1002 student$ pwd
+/Users/student/mtec1002
 
 
 ==========
@@ -174,14 +241,14 @@ $ hostname
 
 Copy and paste the output into the space below.
 ----------
-
+v314-ent-004.local
 
 
 ==========
 17a. Make sure you're back in your mtec1002, which should be in your home folder.  What command would you use to find out if you're in the right folder?  Write the command below, then run it.
 ----------
-
-
+cd ~/mtec1002
+pwd 
 
 ==========
 17b. If you're not in the right directory, type the following command:
@@ -204,7 +271,7 @@ lemon
 Use only one command to make all of these new directories.  Write what command you used below:
 ----------
 
-
+ mkdir -p pineapple/orange/strawberry/lemon
 
 ==========
 19. Make another directory called aardvark.  
@@ -212,14 +279,16 @@ Use only one command to make all of these new directories.  Write what command y
 Write the command you used to create the directory below:
 ----------
 
-
+v314-ent-004:mtec1002 student$ mkdir aardvark
 
 ==========
 20. List the files and directories in the current directory using the long format.  
 
 What is the modified date of the aardvark directory?
 ----------
-
+v314-ent-004:mtec1002 student$ ls -l
+total 0
+drwxr-xr-x  2 student  staff   68 Feb  4 19:59 aardvark
 
 
 ==========
@@ -232,13 +301,24 @@ What is the modified date of the aardvark directory?
 What command did you use?
 ----------
 
-
+v314-ent-004:mtec1002 student$ mkdir -p foo/bar/baz
 
 ==========
 22. Change your directory so that you're in the inner most directory (baz)
 
 What command did you use?
 ----------
+v314-ent-004:mtec1002 student$ mkdir -p foo/bar/baz
+v314-ent-004:mtec1002 student$ cd ~/baz
+-bash: cd: /Users/student/baz: No such file or directory
+v314-ent-004:mtec1002 student$ mkdir -f foo/bar/baz
+mkdir: illegal option -- f
+usage: mkdir [-pv] [-m mode] directory ...
+v314-ent-004:mtec1002 student$ ls
+aardvark	foo		pineapple
+v314-ent-004:mtec1002 student$ cd ~/baz
+-bash: cd: /Users/student/baz: No such file or directory
+v314-ent-004:mtec1002 student$ cd foo/bar/baz/
 
 
 
@@ -247,44 +327,46 @@ What command did you use?
 
 What command did you use?
 ----------
-
+v314-ent-004:baz student$ cd ~/foo
+v314-ent-004:foo student$ ls
 
 ==========
 24. What command is used to delete empty directories?
 ----------
 
-
+rmkdir 
 
 ==========
 25. What command is used to print out your current working directory?
 ----------
 
-
+pwd 
 
 ==========
 26. What flag do I pass to ls to print out all files?
 ----------
 
-
+ls -al 
 
 ==========
 27. What's the shortcut for home directory?
 ----------
 
-
+~
 
 ==========
 28. What's a pathname?
 ----------
-
+folder names 
 
 
 ==========
 29. What's a directory?
 ----------
-
+a directory is a cataloging structure on a file system that references other files (and directories)
 
 
 ==========
 30. What's the *absolute* path (full path, starting at root) to your user's Downloads directory?
 ----------
+/Users/username/Downloads
